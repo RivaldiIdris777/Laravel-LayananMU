@@ -33,12 +33,12 @@ class ViewsTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
-        $response->assertSee('BlogMaster Pro');
+        $response->assertSee('LayananMU Pro');
         $response->assertSee('Login');
         $response->assertSee('Sign Up');
         $response->assertDontSee('Random Text');
         $response->assertSeeText('Explore Posts');
-        $response->assertSeeInOrder(['BlogMaster Pro', 'Powerful Features', 'Ready to Share Your Story?']);
+        $response->assertSeeInOrder(['LayananMU Pro', 'Powerful Features', 'Ready to Share Your Story?']);
     }
 
     public function test_login_page_has_form_inputs_for_login()

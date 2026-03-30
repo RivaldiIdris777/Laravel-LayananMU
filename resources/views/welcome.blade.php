@@ -1,296 +1,508 @@
 @extends('layouts.app')
 
-@section('title', 'Welcome to BlogMaster Pro')
+@section('title', 'Selamat Datang di LayananMu - Jambi')
+
+@section('styles')
+<style>
+    .gradient-gold {
+        background: linear-gradient(135deg, #D4AF37 0%, #F4E5C2 50%, #D4AF37 100%);
+    }
+
+</style>
+@endsection
 
 @section('content')
 <div class="relative min-h-screen overflow-hidden">
     <!-- Animated Background -->
     <div class="fixed inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900"></div>
+        <!-- <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900"></div> -->
         <!-- Floating particles -->
         <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute top-40 right-20 w-96 h-96 bg-cyan-500/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-pink-500/8 rounded-full blur-3xl animate-pulse delay-2000"></div>
-        <!-- Grid pattern -->
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        <div class="absolute top-40 right-20 w-96 h-96 bg-cyan-500/8 rounded-full blur-3xl animate-pulse delay-1000">
+        </div>
+        <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-pink-500/8 rounded-full blur-3xl animate-pulse delay-2000">
+        </div>                
     </div>
 
     <!-- Main Content -->
     <div class="relative z-10">
         <!-- Hero Section -->
-        <section class="relative pb-20 lg:pb-32 px-4 sm:px-6 lg:px-8">
+        <section class="relative pb-20 lg:pb-32 px-4 sm:px-6 lg:px-8" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('images/background_hero.png') }}'); 
+                         background-size: cover; 
+                         background-position: center; 
+                         background-repeat: no-repeat;
+                         background-attachment: fixed;">
             <!-- Floating decorative elements -->
             <div class="absolute top-8 right-8 w-3 h-3 bg-purple-400/40 rounded-full animate-bounce"></div>
             <div class="absolute top-12 right-16 w-2 h-2 bg-cyan-400/30 rounded-full animate-bounce delay-100"></div>
             <div class="absolute top-6 right-24 w-1 h-1 bg-pink-400/50 rounded-full animate-bounce delay-200"></div>
-            
+
             <div class="max-w-7xl mx-auto">
                 <!-- Hero Content -->
-                <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl shadow-2xl overflow-hidden group hover:bg-white/8 transition-all duration-500">
-                    <!-- Gradient overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-cyan-500/5 to-pink-500/10 opacity-60  transition-opacity duration-500"></div>
-                    
-                    <div class="relative z-10 p-8 lg:p-16 text-center">
-                        <div class="mb-8">
-                            <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                </svg>
+                <section class="hero max-w-7xl mx-auto px-4 py-12 md:py-20">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <!-- Kiri: teks + tombol -->
+                        <div class="md:w-1/2 text-center md:text-left">
+                            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-amber-300 mb-4">
+                                PINEROMA<br><span class="text-lime-300">Parfum dengan kandungan organik alami dari buah
+                                    nanas</span>
+                            </h1>
+                            <p class="text-yellow-300 mb-6 max-w-xl">
+                                Inovasi terbaru dalam racikan berkualitas untuk produk parfume impian anda.
+                            </p>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                                <a href="{{ url('/tujuan-1') }}"
+                                    class="btn bg-yellow-500 text-yellow-550 inline-flex items-center justify-center">
+                                    Pesan Sekarang
+                                </a>
+                                <a href="{{ url('/tujuan-2') }}"
+                                    class="btn btn bg-lime-700 inline-flex items-center justify-center">
+                                    Kenalan langsung di medsos kami
+                                </a>
                             </div>
                         </div>
-                        
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8  from-purple-400 via-cyan-400 to-pink-400 group-hover:scale-105 transition-transform duration-300">
-                            BlogMaster Pro
-                        </h1>
-                        
-                        <p class="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                            Where stories come to life. Create, share, and discover extraordinary content with our advanced blogging platform featuring 
-                            <span class="text-purple-400 font-semibold">admin moderation</span>, 
-                            <span class="text-cyan-400 font-semibold">rich media support</span>, and 
-                            <span class="text-pink-400 font-semibold">beautiful design</span>.
+
+                        <!-- Kanan: gambar -->
+                        <div class="md:w-1/2 w-full">
+                            <!-- Opsi A: tag <img> (disarankan) -->
+                            <div class="hero-image overflow-hidden ">
+                                <img src="{{ asset('images/image_hero.png') }}" alt="Hero illustration"
+                                    class="w-full h-64 md:h-96 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <h2 class="text-4xl text-amber-300 font-playfair font-bold mt-2 mb-6">
+                            100% Original lokal dari Kota Jambi
+                        </h2>
+                        <p class="text-lime-600 mb-6 leading-relaxed">
+                            Jambi Essence adalah parfum premium pertama dan satu-satunya yang diproduksi secara lokal di
+                            kota Jambi.
+                            Dibuat dengan cinta dan dedikasi tinggi, kami menghadirkan aroma khas yang mencerminkan
+                            kekayaan budaya
+                            dan alam Jambi dalam setiap tetesannya.
                         </p>
-                        
-                        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                            @auth
-                                <a href="{{ route('posts.create') }}" class="group/btn relative bg-gradient-to-r from-purple-500 to-cyan-500 text-white p-4 rounded-xl font-semibold  shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 transform">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                    <div class="relative flex items-center">
-                                        <svg class="w-6 h-6 mr-3 group-hover/btn:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                                        </svg>
-                                        Start Writing Now
-                                    </div>
-                                </a>
-                                @if(auth()->user()->isAdmin())
-                                    <a href="{{ route('admin.dashboard') }}" class="group/btn relative bg-white/10 backdrop-blur-sm border border-white/20 text-white p-4 rounded-xl font-semibold  hover:bg-white/15 transition-all duration-300 hover:scale-105 transform">
-                                        <div class="flex items-center">
-                                            <svg class="w-6 h-6 mr-3 group-hover/btn:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                            </svg>
-                                            Admin Dashboard
-                                        </div>
-                                    </a>
-                                @else
-                                    <a href="{{ route('profile.show') }}" class="group/btn relative bg-white/10 backdrop-blur-sm border border-white/20 text-white p-4 rounded-xl font-semibold  hover:bg-white/15 transition-all duration-300 hover:scale-105 transform">
-                                        <div class="flex items-center">
-                                            <svg class="w-6 h-6 mr-3 group-hover/btn:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                            </svg>
-                                            My Profile
-                                        </div>
-                                    </a>
-                                @endif
-                            @else
-                                <a href="{{ route('register') }}" class="group/btn relative bg-gradient-to-r from-purple-500 to-cyan-500 text-white p-4 rounded-xl font-semibold  shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 transform">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                    <div class="relative flex items-center">
-                                        <svg class="w-6 h-6 mr-3 group-hover/btn:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                                        </svg>
-                                        Join the Community
-                                    </div>
-                                </a>
-                                <a href="{{ route('posts.index') }}" class="group/btn relative bg-white/10 backdrop-blur-sm border border-white/20 text-white p-4 rounded-xl font-semibold  hover:bg-white/15 transition-all duration-300 hover:scale-105 transform">
-                                    <div class="flex items-center">
-                                        <svg class="w-6 h-6 mr-3 group-hover/btn:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                        </svg>
-                                        Explore Posts
-                                    </div>
-                                </a>
-                            @endauth
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-lime-500">100% Lokal Jambi</strong>
+                                    <p class="text-amber-900">Diproduksi langsung di kota Jambi dengan bahan-bahan lokal
+                                        pilihan</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-lime-500">Berkualitas Premium</strong>
+                                    <p class="text-amber-900" class="text-gray-600">Standar internasional dengan
+                                        sentuhan lokal yang autentik
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-lime-500">Eco-Friendly</strong>
+                                    <p class="text-amber-900" class="text-gray-600">Kemasan ramah lingkungan dan proses
+                                        produksi berkelanjutan
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition">
+                            Pelajari Lebih Lanjut <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="relative float-animation max-w-md mx-auto">
+                        <img src="{{ asset('images/pineroma/expo.jpg') }}" alt="Parfum Jambi Essence"
+                            class="rounded-lg shadow-2xl w-full">
+                        <div class="absolute -bottom-6 -left-6 bg-yellow-500 text-white p-6 rounded-lg shadow-xl">
+                            <div class="text-3xl font-bold">2024</div>
+                            <div class="text-sm">Tahun Berdiri</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-5xl font-bold  from-purple-400 via-cyan-400 to-pink-400 mb-6">
-                        Powerful Features
+        <!-- Ingredients Section -->
+        <section id="ingredients" class="py-20 bg-gradient-to-br from-yellow-50 to-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl text-amber-500 font-playfair font-bold mt-2 mb-4">
+                        Komposisi Aroma Eksklusif
                     </h2>
-                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                        Everything you need to create, manage, and share exceptional content
+                    <p class="text-amber-500 max-w-2xl mx-auto">
+                        Setiap tetesan Jambi Essence mengandung bahan-bahan alami pilihan yang diracik dengan sempurna
                     </p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Admin Moderation -->
-                    <div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:scale-105 transition-all duration-500 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10 opacity-0  transition-opacity duration-500"></div>
-                        <div class="absolute top-4 right-4 w-2 h-2 bg-red-400/40 rounded-full animate-pulse"></div>
-                        <div class="relative z-10">
-                            <div class="w-16 h-16 bg-gradient-to-br from-red-400 to-orange-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-red-300 transition-colors duration-300">
-                                Admin Review System
-                            </h3>
-                            <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                                Content moderation with approval workflow, rejection feedback, and quality control to maintain high standards.
-                            </p>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover-lift scent-note">
+                        <div class="text-4xl mb-4 text-yellow-500">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="text-xl text-yellow-500 font-bold mb-3">Pineapple</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Nanas segar</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Vanilla</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Lemon Segar</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t">
+                            <p class="text-sm text-gray-500">Segar & Energik</p>
                         </div>
                     </div>
 
-                    <!-- Rich Media -->
-                    <div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:scale-105 transition-all duration-500 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0  transition-opacity duration-500"></div>
-                        <div class="absolute top-4 right-4 w-2 h-2 bg-purple-400/40 rounded-full animate-pulse delay-100"></div>
-                        <div class="relative z-10">
-                            <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors duration-300">
-                                Image & Media Support
-                            </h3>
-                            <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                                Upload and showcase images, with automatic optimization and responsive display across all devices.
-                            </p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover-lift scent-note">
+                        <div class="text-4xl mb-4 text-yellow-500">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="text-xl text-yellow-500 font-bold mb-3">Middle Notes</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Mawar Jambi</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Jasmine Sambak</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Kayu Manis</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t">
+                            <p class="text-sm text-gray-500">Floral & Hangat</p>
                         </div>
                     </div>
 
-                    <!-- Rich Text Editor -->
-                    <div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:scale-105 transition-all duration-500 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0  transition-opacity duration-500"></div>
-                        <div class="absolute top-4 right-4 w-2 h-2 bg-cyan-400/40 rounded-full animate-pulse delay-200"></div>
-                        <div class="relative z-10">
-                            <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                </svg>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover-lift scent-note">
+                        <div class="text-4xl mb-4 text-yellow-500">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3 class="text-xl text-yellow-500 font-bold mb-3">Base Notes</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Sandalwood</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Vanili Madu</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Musk Putih</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t">
+                            <p class="text-sm text-gray-500">Wangi & Tahan Lama</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <div class="inline-block bg-green-100 px-6 py-3 rounded-full">
+                        <i class="fas fa-certificate text-green-600 mr-2"></i>
+                        <span class="text-green-800 font-semibold">100% Bahan Alami & Halal Certified</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievement Section -->
+        <section id="achievement" class="py-20 bg-lime-700 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl text-white font-playfair font-bold mt-2 mb-4">
+                        Mendapatkan Pendanaan & Pengakuan
+                    </h2>
+                    <p class="text-white max-w-2xl mx-auto">
+                        Prestasi yang membanggakan sebagai bukti kualitas dan potensi Jambi Essence
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    <div class="space-y-6">
+                        <div class="bg-amber-300 backdrop-blur-sm p-6 rounded-xl border border-yellow-500/30">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-trophy text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Pendanaan Series A</h3>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
-                                CKEditor Integration
-                            </h3>
-                            <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                                Professional rich text editor with formatting, tables, links, and advanced content creation tools.
+                            <p class="text-white mb-3">
+                                Berhasil mendapatkan pendanaan sebesar <span class="text-white font-bold">Rp 2.5
+                                    Miliar</span>
+                                dari investor lokal dan nasional
                             </p>
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span class="text-white">Februari 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-300 backdrop-blur-sm p-6 rounded-xl border border-yellow-500/30">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-award text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Best Local Product 2024</h3>
+                            </div>
+                            <p class="text-white mb-3">
+                                Terpilih sebagai produk lokal terbaik dalam <span class="text-white font-bold">Indonesia
+                                    Beauty Awards</span>
+                            </p>
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span class="text-white">Maret 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-300 backdrop-blur-sm p-6 rounded-xl border border-yellow-500/30">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-handshake text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Kerjasama Distribusi</h3>
+                            </div>
+                            <p class="text-white mb-3">
+                                Menjalin kerjasama dengan <span class="text-white font-bold">50+ mitra
+                                    distribusi</span>
+                                di seluruh Indonesia
+                            </p>
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span class="text-white">April 2024</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Categories -->
-                    <div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:scale-105 transition-all duration-500 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-0  transition-opacity duration-500"></div>
-                        <div class="absolute top-4 right-4 w-2 h-2 bg-green-400/40 rounded-full animate-pulse delay-300"></div>
-                        <div class="relative z-10">
-                            <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-green-300 transition-colors duration-300">
-                                Smart Categories
-                            </h3>
-                            <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                                Organize content with intelligent categorization, filtering, and discovery features for better content navigation.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- User Management -->
-                    <div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:scale-105 transition-all duration-500 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 opacity-0  transition-opacity duration-500"></div>
-                        <div class="absolute top-4 right-4 w-2 h-2 bg-indigo-400/40 rounded-full animate-pulse delay-500"></div>
-                        <div class="relative z-10">
-                            <div class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-indigo-300 transition-colors duration-300">
-                                User Roles & Permissions
-                            </h3>
-                            <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                                Role-based access control with admin and user permissions, secure authentication and profile management.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Modern UI -->
-                    <div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:scale-105 transition-all duration-500 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 opacity-0  transition-opacity duration-500"></div>
-                        <div class="absolute top-4 right-4 w-2 h-2 bg-yellow-400/40 rounded-full animate-pulse delay-700"></div>
-                        <div class="relative z-10">
-                            <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-yellow-300 transition-colors duration-300">
-                                Glass Morphism Design
-                            </h3>
-                            <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                                Beautiful, modern interface with glass morphism effects, smooth animations, and responsive design.
-                            </p>
+                    <div class="relative">
+                        <img src="{{ asset('images/pineroma/ojk.jpg') }}" alt="Penghargaan"
+                            class="rounded-lg shadow-2xl">
+                        <div
+                            class="absolute -top-4 -right-4 bg-yellow-500 text-black p-4 rounded-lg shadow-xl animate-pulse">
+                            <i class="fas fa-star text-2xl"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Call to Action Section -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl shadow-2xl overflow-hidden group hover:bg-white/8 transition-all duration-500">
-                    <!-- Background gradient -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-cyan-500/5 to-pink-500/10 opacity-60  transition-opacity duration-500"></div>
-                    
-                    <!-- Floating decorative elements -->
-                    <div class="absolute top-6 right-6 w-3 h-3 bg-purple-400/40 rounded-full animate-bounce"></div>
-                    <div class="absolute top-10 right-12 w-2 h-2 bg-cyan-400/30 rounded-full animate-bounce delay-100"></div>
-                    <div class="absolute top-8 right-20 w-1 h-1 bg-pink-400/50 rounded-full animate-bounce delay-200"></div>
-                    
-                    <div class="relative z-10 p-12 lg:p-16">
-                        <h2 class="text-4xl lg:text-5xl font-bold  from-purple-400 via-cyan-400 to-pink-400 mb-6 group-hover:scale-105 transition-transform duration-300">
-                            Ready to Share Your Story?
-                        </h2>
-                        <p class="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto group-hover:text-gray-200 transition-colors duration-300">
-                            Join thousands of writers and readers in our vibrant community. Create engaging content, connect with like-minded individuals, and watch your audience grow.
+        <!-- Test Results Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl text-amber-500 font-playfair font-bold mt-2 mb-4">
+                        Teruji & Tersertifikasi
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Hasil uji Badan POM membuktikan kualitas dan keamanan Jambi Essence
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div
+                        class="text-center p-6 bg-gradient-to-br from-yellow-50 to-white rounded-xl shadow-md hover-lift">
+                        <div class="text-5xl font-bold text-yellow-600 mb-2">98%</div>
+                        <div class="text-amber-700 font-semibold">Kemanan Kulit</div>
+                        <div class="text-sm text-gray-500 mt-2">Dermatology Tested</div>
+                    </div>
+                    <div
+                        class="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-md hover-lift">
+                        <div class="text-5xl font-bold text-blue-600 mb-2">0%</div>
+                        <div class="text-blue-700 font-semibold">Alkohol Berbahaya</div>
+                        <div class="text-sm text-gray-500 mt-2">Alcohol-Free</div>
+                    </div>
+                    <div
+                        class="text-center p-6 bg-gradient-to-br from-purple-50 to-white rounded-xl shadow-md hover-lift">
+                        <div class="text-5xl font-bold text-purple-600 mb-2">A+</div>
+                        <div class="text-purple-700 font-semibold">Kualitas Premium</div>
+                        <div class="text-sm text-gray-500 mt-2">Grade A Quality</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-gradient-to-br from-yellow-50 to-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl text-amber-500 font-playfair font-bold mt-2 mb-4">
+                        Apa Kata Mereka ?
+                    </h2>
+                    <p class="text-amber-500 max-w-2xl mx-auto">
+                        Ribuan pelanggan telah merasakan keistimewaan Jambi Essence
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="testimonial-card p-6 rounded-xl shadow-lg hover-lift">
+                        <div class="flex items-center mb-4">
+                            <img src="{{ asset('images/pineroma/testimoni1.jpg') }}" alt="User"
+                                class="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold text-amber-700">Sarah Putri</h4>
+                                <div class="flex text-yellow-500 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-amber-700 italic">
+                            "Parfumnya wanginya sangat elegan dan tahan lama! Bangga bisa menggunakan produk lokal dari
+                            Jambi yang kualitasnya tidak kalah dengan merek internasional."
                         </p>
-                        
-                        @guest
-                        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                            <a href="{{ route('register') }}" class="group/btn relative bg-gradient-to-r from-purple-500 to-cyan-500 text-white p-4 rounded-xl font-semibold  shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 transform">
-                                <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <div class="relative flex items-center">
-                                    <svg class="w-6 h-6 mr-3 group-hover/btn:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                    </svg>
-                                    Start Your Journey
-                                </div>
-                            </a>
-                            <a href="{{ route('posts.index') }}" class="group/btn relative bg-white/10 backdrop-blur-sm border border-white/20 text-white p-4 rounded-xl font-semibold  hover:bg-white/15 transition-all duration-300 hover:scale-105 transform">
-                                <div class="flex items-center">
-                                    <svg class="w-6 h-6 mr-3 group-hover/btn:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                    </svg>
-                                    Browse Stories
-                                </div>
-                            </a>
+                        <div class="mt-4 text-sm text-gray-500">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Jambi City
                         </div>
-                        @else
-                        <a href="{{ route('posts.create') }}" class="group/btn relative bg-gradient-to-r from-purple-500 to-cyan-500 text-white p-4 rounded-xl font-semibold  shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 transform inline-flex items-center">
-                            <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                            <div class="relative flex items-center">
-                                <svg class="w-6 h-6 mr-3 group-hover/btn:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                                </svg>
-                                Create Your Next Post
+                    </div>
+
+                    <div class="testimonial-card p-6 rounded-xl shadow-lg hover-lift">
+                        <div class="flex items-center mb-4">
+                            <img src="{{ asset('images/pineroma/testimoni2.jpg') }}" alt="User"
+                                class="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold text-amber-700">Sabna</h4>
+                                <div class="flex text-yellow-500 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
-                        </a>
-                        @endguest
+                        </div>
+                        <p class="text-amber-700 italic">
+                            "Sebagai pria, saya sangat suka aroma maskulin yang tidak terlalu menyengat. Jambi Essence
+                            memberikan kesan profesional namun tetap elegan. Recommended!"
+                        </p>
+                        <div class="mt-4 text-sm text-gray-500">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Jakarta
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card p-6 rounded-xl shadow-lg hover-lift">
+                        <div class="flex items-center mb-4">
+                            <img src="{{ asset('images/pineroma/testimoni4.jpg') }}" alt="User"
+                                class="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold text-amber-700">Hendra Kurniawan</h4>
+                                <div class="flex text-yellow-500 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-amber-700 italic">
+                            "Sudah 6 bulan pakai Jambi Essence dan banyak teman yang tanya parfum apa yang saya pakai.
+                            Wanginya unik dan memang beda dari yang lain. Top banget!"
+                        </p>
+                        <div class="mt-4 text-sm text-gray-500">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Surabaya
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <div class="inline-flex items-center space-x-4 bg-white px-6 py-3 rounded-full shadow-md">
+                        <i class="fas fa-quote-left text-yellow-500"></i>
+                        <span class="text-yellow-500">5000+ Testimoni Positif</span>
+                        <i class="fas fa-quote-right text-yellow-500"></i>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 gradient-gold">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl text-gray-950 font-playfair font-bold mb-6">
+                    "Rasakan Keistimewaan Pineroma Essence"
+                </h2>
+                <p class="text-xl mb-8 text-gray-950 max-w-2xl mx-auto">
+                    Dapatkan parfum original lokal pertama dari Jambi dengan harga spesial
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                        class="px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transform hover:scale-105 transition">
+                        <i class="fas fa-shopping-bag mr-2"></i>Beli Sekarang - Diskon 20%
+                    </button>
+                </div>
+                <div class="mt-8 text-sm text-amber-700">
+                    <i class="fas fa-truck mr-2"></i>Gratis Ongkir untuk Pembelian di sekitaran provinsi Jambi
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="bg-amber-400 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <i class="fas fa-spray-can text-2xl text-white"></i>
+                            <span class="text-xl font-bold font-playfair">Pineroma</span>
+                        </div>
+                        <p class="text-white">
+                            Parfum premium lokal pertama dan satu-satunya dari kota Jambi
+                        </p>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-white ">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-yellow-800 transition">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-yellow-800 transition">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-yellow-800 transition">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="text-white"><a href="#" >Tentang Kami</a></li>
+                            <li class="text-white"><a href="#" >Produk</a></li>
+                            <li class="text-white"><a href="#" >Testimoni</a></li>
+                            <li class="text-white"><a href="#" >Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold mb-4">Kontak</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="text-white"><i class="fas fa-phone mr-2"></i>+62 812-3456-7890</li>
+                            <li class="text-white"><i class="fas fa-envelope mr-2"></i>info@jambiesence.id</li>
+                            <li class="text-white"><i class="fas fa-map-marker-alt mr-2"></i>Jambi, Indonesia</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold mb-4">Newsletter</h4>
+                        <p class="text-white mb-4">Dapatkan penawaran spesial dan info terbaru</p>
+                        <div class="flex">
+                            <input type="email" placeholder="Email Anda"
+                                class="px-4 py-2 bg-gray-800 rounded-l-lg flex-1 text-white">
+                            <button
+                                class="px-4 py-2 bg-yellow-500 text-black rounded-r-lg hover:bg-yellow-600 transition">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-white">
+                    <p>&copy; 2024 Pineroma. All rights reserved. Made with <i
+                            class="fas fa-heart text-red-500"></i> in Jambi</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
 </div>
 @endsection

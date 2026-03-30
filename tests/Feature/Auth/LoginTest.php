@@ -62,7 +62,7 @@ class LoginTest extends TestCase
         ]);
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('profile.show'));
+        $response->assertRedirect(route('admin.profile.show'));
         $this->assertAuthenticated();
         $this->assertAuthenticatedAs($user);
         $this->assertEquals(auth()->user()->email, $user->email);

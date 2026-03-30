@@ -19,7 +19,7 @@ class UpdateProfileTest extends TestCase
             [
                 '<form',
                 'method="POST"',
-                'action="' . route('profile.update') . '"',
+                'action="' . route('admin.profile.update') . '"',
                 'name="name" id="name" value="' . auth()->user()->name . '"',
                 'name="email" id="email" value="' . auth()->user()->email . '"',
                 '</form>'

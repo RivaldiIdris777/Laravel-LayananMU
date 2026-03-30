@@ -19,7 +19,7 @@ class VerifyEmailTest extends TestCase
     {
         $this->authenticate($this->createUser(['email_verified_at' => null]));
 
-        $response = $this->get(route('profile.show'));
+        $response = $this->get(route('admin.profile.show'));
 
         $response->assertStatus(200);
         $response->assertSee('Verify Email');
@@ -29,7 +29,7 @@ class VerifyEmailTest extends TestCase
     {
         $this->authenticate($this->createUser());
 
-        $response = $this->get(route('profile.show'));
+        $response = $this->get(route('admin.profile.show'));
 
         $response->assertStatus(200);
         $response->assertDontSee('Verify Email');
@@ -67,7 +67,7 @@ class VerifyEmailTest extends TestCase
         $response = $this->get($verificationUrl);
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('profile.show'));
+        $response->assertRedirect(route('admin.profile.show'));
         $response->assertSessionHas('message', 'Email verified successfully!');
 
         $this->assertNotNull($user->fresh()->email_verified_at);

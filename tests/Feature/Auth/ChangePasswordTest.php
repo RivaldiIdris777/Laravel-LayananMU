@@ -88,7 +88,7 @@ class ChangePasswordTest extends TestCase
         $this->post('/login', [
             'email' => $user->email,
             'password' => 'newpassword',
-        ])->assertRedirect(route('profile.show'));
+        ])->assertRedirect(route('admin.profile.show'));
 
         // Log out again before testing old password
         Auth::logout();

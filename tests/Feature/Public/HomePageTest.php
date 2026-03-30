@@ -20,7 +20,7 @@ class HomePageTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertViewIs('welcome');
-        $response->assertSee('BlogMaster Pro');
+        $response->assertSee('LayananMU Pro');
     }
 
     public function test_home_page_contains_navigation_links(): void
@@ -44,7 +44,7 @@ class HomePageTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
-        $response->assertSee('Welcome to BlogMaster Pro');
+        $response->assertSee('Welcome to LayananMU Pro');
     }
 
     public function test_unauthenticated_user_sees_login_and_register_links(): void
@@ -63,7 +63,7 @@ class HomePageTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('href="' . route('posts.create') . '"', false);
-        $response->assertSee('href="' . route('profile.show') . '"', false);
+        $response->assertSee('href="' . route('admin.profile.show') . '"', false);
         $response->assertSee('form method="POST" action="' . route('logout') . '"', false);
     }
 

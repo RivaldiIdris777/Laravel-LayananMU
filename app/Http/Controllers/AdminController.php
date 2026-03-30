@@ -90,4 +90,9 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard')
             ->with('message', 'Post rejected with feedback.');
     }
+
+    public function dashboard2View () 
+    {
+        return view('admin.dashboard2');
+    }
 }

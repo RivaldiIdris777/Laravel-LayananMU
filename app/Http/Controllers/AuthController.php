@@ -24,13 +24,13 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user',
+            'role' => 'client',
         ]);
 
         Auth::login($user);
         Mail::to($user->email)->send(new WelcomeEmail($user));
 
-        return redirect()->route('profile.show')
+        return redirect('/')
             ->with('message', 'Registration successful! Welcome to our blog.');
     }
 
@@ -47,7 +47,13 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route(Auth::user()->isAdmin() ? 'admin.dashboard' : 'profile.show'))
+            $user = Auth::user();
+            $redirectUrl = match($user->role) {
+                'admin', 'cs' => '/admin2',
+                default => '/',
+            };
+
+            return redirect()->intended($redirectUrl)
                 ->with('message', 'Login successful!');
         }
 
@@ -63,7 +69,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('home')
-            ->with('message', 'You have been logged out successfully.');
+        return redirect()->route('home');
     }
 }

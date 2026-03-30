@@ -3,7 +3,7 @@
 @section('title', 'Register')
 
 @section('content')
-<div class="max-w-md mx-auto relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-2xl p-8 overflow-hidden group hover:bg-white/8 transition-all duration-300">
+<div class="max-w-md mx-auto relative bg-slate-900 backdrop-blur-sm border border-white/10 rounded-xl shadow-2xl p-8 overflow-hidden group hover:bg-slate-900 transition-all duration-300 mt-20">
     <!-- Dynamic gradient overlay -->
     <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-500/5 to-teal-500/10 opacity-60 transition-opacity duration-300"></div>
     
@@ -22,8 +22,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                 </svg>
             </div>
-            <h1 class="text-3xl font-bold  from-white via-green-200 to-teal-200 group-hover:from-green-200 group-hover:via-emerald-100 group-hover:to-teal-100 transition-all duration-300">Join Our Community</h1>
-            <p class="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 mt-2">Create your account to get started</p>
+            <h1 class="text-3xl font-bold from-white via-green-200 to-teal-200 group-hover:from-green-200 group-hover:via-emerald-100 group-hover:to-teal-100 transition-all duration-300">Daftar Untuk Akses Lebih Jauh</h1>
+            <!-- <p class="text-slate-300 group-hover:text-slate-200 transition-colors duration-300 mt-2">Create your account to get started</p> -->
         </div>
 
         <form method="POST" action="{{ route('register') }}">
@@ -37,7 +37,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
                     </div>
-                    Full Name
+                    Nama Lengkap
                 </label>
                 <input 
                     type="text" 
@@ -46,8 +46,8 @@
                     value="{{ old('name') }}" 
                     required 
                     autofocus
-                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400/50 focus:border-green-400/50 hover:bg-white/15 transition-all duration-200 @error('name') border-red-400/50 @else border-white/20 @enderror"
-                    placeholder="Enter your full name"
+                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-green-400/50 focus:border-green-400/50 hover:bg-white/15 transition-all duration-200 @error('name') border-red-400/50 @else border-white/20 @enderror"
+                    placeholder="Masukkan Nama Lengkap"
                 >
                 @error('name')
                     <p class="mt-2 text-sm text-red-400 flex items-center">
@@ -67,7 +67,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    Email Address
+                    Alamat Email
                 </label>
                 <input 
                     type="email" 
@@ -75,8 +75,8 @@
                     name="email" 
                     value="{{ old('email') }}" 
                     required
-                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 hover:bg-white/15 transition-all duration-200 @error('email') border-red-400/50 @else border-white/20 @enderror"
-                    placeholder="Enter your email address"
+                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 hover:bg-white/15 transition-all duration-200 @error('email') border-red-400/50 @else border-white/20 @enderror"
+                    placeholder="Masukkan Alamat Email"
                 >
                 @error('email')
                     <p class="mt-2 text-sm text-red-400 flex items-center">
@@ -103,8 +103,8 @@
                     id="password" 
                     name="password" 
                     required
-                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400/50 focus:border-teal-400/50 hover:bg-white/15 transition-all duration-200 @error('password') border-red-400/50 @else border-white/20 @enderror"
-                    placeholder="Create a secure password"
+                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-400/50 focus:border-teal-400/50 hover:bg-white/15 transition-all duration-200 @error('password') border-red-400/50 @else border-white/20 @enderror"
+                    placeholder="********"
                 >
                 @error('password')
                     <p class="mt-2 text-sm text-red-400 flex items-center">
@@ -131,8 +131,8 @@
                     id="password_confirmation" 
                     name="password_confirmation" 
                     required
-                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 hover:bg-white/15 transition-all duration-200 border-white/20"
-                    placeholder="Confirm your password"
+                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 hover:bg-white/15 transition-all duration-200 border-white/20"
+                    placeholder="********"
                 >
             </div>
 
@@ -145,16 +145,16 @@
                     <svg class="w-5 h-5 mr-2 group-hover/signup:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                     </svg>
-                    Create Account
+                    Daftar Akun
                 </button>
             </div>
 
             <!-- Login Link -->
             <div class="text-center">
-                <p class="text-sm text-gray-400">
-                    Already have an account? 
+                <p class="text-sm text-slate-400">
+                    Sudah Punya Akun?
                     <a href="{{ route('login') }}" class="text-green-400 hover:text-green-300 font-medium hover:scale-105 inline-block transition-all duration-200">
-                        Sign in here
+                        Login Disini
                     </a>
                 </p>
             </div>

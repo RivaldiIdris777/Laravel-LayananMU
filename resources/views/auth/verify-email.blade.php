@@ -41,7 +41,7 @@
     </form>
 
     <div class="text-center">
-        <a href="{{ route('profile.show') }}" class="text-sm text-gray-400 hover:text-gray-300 underline mr-4">
+        <a href="{{ route('admin.profile.show') }}" class="text-sm text-gray-400 hover:text-gray-300 underline mr-4">
             Back to Profile
         </a>
     </div>

@@ -27,7 +27,7 @@ class ProfileController extends Controller
     $firstPostDate = $user->posts()->oldest()->first()?->created_at;
     $memberSince = $firstPostDate ? $firstPostDate->diffForHumans() : 'No posts yet';
 
-    return view('profile', compact(
+    return view('admin.profileuser.profileuser', compact(
       'user',
       'userPosts',
       'memberSince'
@@ -54,7 +54,7 @@ class ProfileController extends Controller
 
     $user->update($updateData);
 
-    return redirect()->route('profile.show')->with('success', 'Profile updated successfully!');
+    return redirect()->route('admin.profile.show')->with('success', 'Profile updated successfully!');
   }
 
   public function updatePassword(ChangePasswordRequest $request)
@@ -69,6 +69,6 @@ class ProfileController extends Controller
       'password' => Hash::make($request->password)
     ]);
 
-    return redirect()->route('profile.show')->with('success', 'Password updated successfully!');
+    return redirect()->route('admin.profile.show')->with('success', 'Password updated successfully!');
   }
 }

@@ -1,8 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('title', 'Profile')
+@section('title','Dashboard LayananMu - Jambi')
 
-@section('content')
+@section('styles')
+@endsection
+
+@section('contentadmin')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header -->
     <div class="mb-8">
@@ -100,7 +103,7 @@
             <p class="text-sm text-gray-400 mt-1">Update your account's profile information and email address.</p>
         </div>
         
-        <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data" class="p-6">
+        <form method="POST" action="{{ route('admin.profile.update') }}" enctype="multipart/form-data" class="p-6">
             @csrf
             @method('PATCH')
             
@@ -197,7 +200,7 @@
             <p class="text-sm text-gray-400 mt-1">Update your password to keep your account secure.</p>
         </div>
         
-        <form method="POST" action="{{ route('profile.password') }}" class="p-6">
+        <form method="POST" action="{{ route('admin.profile.password') }}" class="p-6">
             @csrf
             @method('PATCH')
             

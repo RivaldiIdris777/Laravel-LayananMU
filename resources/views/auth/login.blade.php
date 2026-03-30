@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-<div class="max-w-md mx-auto relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-2xl p-8 overflow-hidden group hover:bg-white/8 transition-all duration-300">
+<div class="max-w-md mx-auto relative bg-slate-900 backdrop-blur-sm border border-white/10 rounded-xl shadow-2xl p-8 overflow-hidden group hover:bg-slate-900 transition-all duration-300 mt-20">
     <!-- Dynamic gradient overlay -->
     <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-purple-500/10 opacity-60 transition-opacity duration-300"></div>
     
@@ -22,8 +22,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
             </div>
-            <h1 class="text-3xl font-bold  from-white via-blue-200 to-purple-200 group-hover:from-blue-200 group-hover:via-indigo-100 group-hover:to-purple-100 transition-all duration-300">Welcome Back</h1>
-            <p class="text-gray-300 group-hover:text-gray-200 transition-colors duration-300 mt-2">Sign in to your account</p>
+            <h1 class="text-3xl font-bold  from-white via-blue-200 to-purple-200 group-hover:from-blue-200 group-hover:via-indigo-100 group-hover:to-purple-100 transition-all duration-300">LayananMU</h1>
+            <p class="text-slate-300 group-hover:text-slate-200 transition-colors duration-300 mt-2">Masuk Untuk Akses Lebih Lanjut</p>
         </div>
 
         <form method="POST" action="{{ route('login') }}">
@@ -37,7 +37,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    Email
+                    Alamat Email
                 </label>
                 <input 
                     type="email" 
@@ -46,8 +46,8 @@
                     value="{{ old('email') }}" 
                     required 
                     autofocus
-                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 hover:bg-white/15 transition-all duration-200 @error('email') border-red-400/50 @else border-white/20 @enderror"
-                    placeholder="Enter your email address"
+                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 hover:bg-white/15 transition-all duration-200 @error('email') border-red-400/50 @else border-white/20 @enderror"
+                    placeholder="formatemail@mail.com"
                 >
                 @error('email')
                     <p class="mt-2 text-sm text-red-400 flex items-center">
@@ -74,8 +74,8 @@
                     id="password" 
                     name="password" 
                     required
-                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400/50 focus:border-indigo-400/50 hover:bg-white/15 transition-all duration-200 @error('password') border-red-400/50 @else border-white/20 @enderror"
-                    placeholder="Enter your password"
+                    class="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-400/50 focus:border-indigo-400/50 hover:bg-white/15 transition-all duration-200 @error('password') border-red-400/50 @else border-white/20 @enderror"
+                    placeholder="********"
                 >
                 @error('password')
                     <p class="mt-2 text-sm text-red-400 flex items-center">
@@ -85,25 +85,7 @@
                         {{ $message }}
                     </p>
                 @enderror
-            </div>
-
-            <!-- Remember Me -->
-            <div class="flex items-center justify-between mb-8">
-                <div class="flex items-center group/remember">
-                    <input 
-                        type="checkbox" 
-                        id="remember" 
-                        name="remember" 
-                        class="h-4 w-4 bg-white/10 border-white/20 text-purple-500 focus:ring-purple-400/50 focus:ring-offset-transparent rounded group-hover/remember:scale-110 transition-transform duration-200"
-                    >
-                    <label for="remember" class="ml-3 text-sm text-gray-300 group-hover/remember:text-white transition-colors duration-200">
-                        Remember me
-                    </label>
-                </div>
-                <a href="{{ route('password.request') }}" class="text-sm text-purple-400 hover:text-purple-300 hover:scale-105 transition-all duration-200">
-                    Forgot password?
-                </a>
-            </div>
+            </div>            
 
             <!-- Submit Button -->
             <div class="mb-6">
@@ -114,19 +96,19 @@
                     <svg class="w-5 h-5 mr-2 group-hover/signin:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                     </svg>
-                    Sign In
+                    Masuk
                 </button>
             </div>
 
             <!-- Register Link -->
-            <div class="text-center">
-                <p class="text-sm text-gray-400">
+            <!-- <div class="text-center">
+                <p class="text-sm text-slate-400">
                     Don't have an account? 
                     <a href="{{ route('register') }}" class="text-blue-400 hover:text-blue-300 font-medium hover:scale-105 inline-block transition-all duration-200">
                         Create one here
                     </a>
                 </p>
-            </div>
+            </div> -->
         </form>
     </div>
 </div>

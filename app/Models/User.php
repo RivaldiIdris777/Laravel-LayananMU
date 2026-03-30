@@ -46,4 +46,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Post::class);
     }
+
+    public function conversations()
+    {
+        return $this->belongsToMany(Conversation::class, 'conversation_user')
+                    ->withPivot(['role', 'joined_at', 'last_read_at', 'is_muted', 'muted_until'])
+                    ->withTimestamps();
+    }
 }
