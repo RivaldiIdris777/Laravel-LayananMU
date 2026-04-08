@@ -8,6 +8,56 @@
         background: linear-gradient(135deg, #D4AF37 0%, #F4E5C2 50%, #D4AF37 100%);
     }
 
+    /* WhatsApp Modal */
+    #waModal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(4px);
+    }
+    #waModal.show {
+        display: flex;
+    }
+    #waModal .modal-box {
+        background: #fff;
+        border-radius: 1.25rem;
+        padding: 2rem;
+        width: 100%;
+        max-width: 440px;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        animation: modalIn 0.3s ease;
+    }
+    @keyframes modalIn {
+        from { opacity: 0; transform: translateY(30px) scale(0.97); }
+        to   { opacity: 1; transform: translateY(0)   scale(1); }
+    }
+    #waModal input,
+    #waModal textarea,
+    #waModal select {
+        width: 100%;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 0.625rem;
+        padding: 0.65rem 0.9rem;
+        font-size: 0.95rem;
+        color: #1e293b;
+        background: #f8fafc;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+    #waModal input:focus,
+    #waModal textarea:focus,
+    #waModal select:focus {
+        border-color: #ef4444;
+        background: #fff;
+    }
+    #waModal textarea {
+        resize: vertical;
+        min-height: 90px;
+    }
 </style>
 @endsection
 
@@ -424,9 +474,9 @@
                     Dapatkan parfum original lokal pertama dari Jambi dengan harga spesial
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button
+                    <button onclick="openWaModal()"
                         class="px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transform hover:scale-105 transition">
-                        <i class="fas fa-shopping-bag mr-2"></i>Beli Sekarang - Diskon 20%
+                        <i class="fas fa-shopping-bag mr-2"></i>Beli Sekarang
                     </button>
                 </div>
                 <div class="mt-8 text-sm text-amber-700">
@@ -505,4 +555,93 @@
 
     </div>
 </div>
+
+<!-- WhatsApp Modal -->
+<div id="waModal" role="dialog" aria-modal="true" aria-labelledby="waModalTitle">
+    <div class="modal-box">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:#25D366">
+                    <i class="fab fa-whatsapp text-white text-xl"></i>
+                </div>
+                <h2 id="waModalTitle" class="text-lg font-bold text-slate-800">Hubungi via WhatsApp</h2>
+            </div>
+            <button onclick="closeWaModal()" class="text-slate-400 hover:text-red-500 transition text-xl leading-none">&times;</button>
+        </div>
+
+        <p class="text-sm text-slate-500 mb-5">Sebelum pesan boleh diisi dulu kak jadi langsung kami proses.</p>
+
+        <!-- Form -->
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-slate-900 mb-1" for="wa_nama">Nama Pembeli</label>
+                <input id="wa_nama" type="text" placeholder="Budi Santoso">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-slate-900 mb-1" for="wa_npm">Alamat</label>
+                <textarea id="wa_alamat" placeholder="Contoh: Jln. Sudirman No. 123"></textarea>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-slate-900 mb-1" for="wa_npm">Ukuran (ml)</label>
+                <select id="wa_ukuran">                   
+                    <option value="30 ml">30 ml</option>                    
+                </select>
+            </div>                    
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-3 mt-6">
+            <button onclick="closeWaModal()"
+                class="flex-1 py-2.5 rounded-full border border-slate-300 text-slate-600 font-medium hover:bg-slate-50 transition text-sm">
+                Batal
+            </button>
+            <button onclick="sendToWhatsapp()"
+                class="flex-1 py-2.5 rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold transition text-sm flex items-center justify-center gap-2"                >
+                <i class="fab fa-whatsapp"></i> Kirim ke WhatsApp
+            </button>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+<script>
+    const WA_NUMBER = '6282281119968'; // 0822 8111 9968
+
+    function openWaModal() {
+        document.getElementById('waModal').classList.add('show');
+        document.getElementById('wa_nama').focus();
+    }
+
+    function closeWaModal() {
+        document.getElementById('waModal').classList.remove('show');
+    }
+
+    document.getElementById('waModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeWaModal();
+    })
+
+    function sendToWhatsApp() {
+        const nama = document.getElementById('wa_nama').value.trim();
+        const ukuran = document.getElementById('wa_ukuran').value.trim();
+        const alamat = document.getElementById('wa_alamat').value.trim();
+
+        if (!nama || !alamat) {
+            alert('Mohon lengkapi isi form terlebih dahulu');
+            return
+        }
+
+        const pesan = 
+        `Halo, kak saya ingin memesan parfum Pineroma. Nama saya ${nama}, alamat saya ${alamat}.Untuk ukurannya ${ukuran}. Boleh dibalas pesan saya kak untuk lebih lanjut`;
+
+        window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(pesan)}`, '_blank');
+        closeWaModal();
+    }
+
+</script>
 @endsection

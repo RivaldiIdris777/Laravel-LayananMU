@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Selamat Datang di LayananMu - Jambi')
+@section('title', 'Cek Data Alumni - LayananMU')
 
 @section('styles')
 <style>
@@ -110,6 +110,14 @@
                         class="major-btn px-4 py-2 rounded-full bg-blue-600 text-white transition-all hover:bg-blue-700">
                         Semua
                     </button>
+                    <button onclick="filterByMajor('Ekonomi Pembangunan')"
+                        class="major-btn px-4 py-2 rounded-full bg-gray-200 text-slate-700 transition-all hover:bg-gray-300">
+                        Ekonomi Pembangunan
+                    </button>
+                    <button onclick="filterByMajor('Manajemen')"
+                        class="major-btn px-4 py-2 rounded-full bg-gray-200 text-slate-700 transition-all hover:bg-gray-300">
+                        Manajemen
+                    </button>                    
                     <button onclick="filterByMajor('Teknik Informatika')"
                         class="major-btn px-4 py-2 rounded-full bg-gray-200 text-slate-700 transition-all hover:bg-gray-300">
                         Teknik Informatika
@@ -117,16 +125,7 @@
                     <button onclick="filterByMajor('Sistem Informasi')"
                         class="major-btn px-4 py-2 rounded-full bg-gray-200 text-slate-700 transition-all hover:bg-gray-300">
                         Sistem Informasi
-                    </button>
-                    <button onclick="filterByMajor('Manajemen')"
-                        class="major-btn px-4 py-2 rounded-full bg-gray-200 text-slate-700 transition-all hover:bg-gray-300">
-                        Manajemen
-                    </button>
-                    <button onclick="filterByMajor('Ekonomi Pembangunan')"
-                        class="major-btn px-4 py-2 rounded-full bg-gray-200 text-slate-700 transition-all hover:bg-gray-300">
-                        Ekonomi Pembangunan
-                    </button>
-
+                    </button>                    
                     <!-- Filter Status -->
                     <div class="ml-auto flex items-center gap-2">
                         <span class="text-slate-700 font-semibold">Status:</span>

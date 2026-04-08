@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Selamat Datang di LayananMu - Jambi')
+@section('title', 'OpenTrip Bersama Pendaki - LayananMU')
 
 @section('styles')
 <style>
@@ -111,10 +111,10 @@
                             class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition transform hover:scale-105">
                             <i class="fas fa-hiking mr-2"></i> Mulai Petualangan
                         </button>
-                        <button onclick="playVideo()"
-                            class="bg-white bg-opacity-20 backdrop-blur text-white px-8 py-4 rounded-full font-semibold hover:bg-opacity-30 transition transform hover:scale-105">
+                        <a href=""
+                            class="bg-white text-yellow-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition transform hover:scale-105">
                             <i class="fab fa-instagram mr-2"></i> Kunjungi Instagram Kami
-                        </button>
+                        </a>
                     </div>
                     <div class="mt-12 grid grid-cols-3 gap-8">
                         <div class="text-center">
@@ -143,71 +143,31 @@
                         Nikmati berbagai aktivitas seru yang dipandu langsung oleh mahasiswa kehutanan profesional
                     </p>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
                     <!-- Mountain Climbing -->
                     <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
                         <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                             <i class="fas fa-mountain text-white text-6xl"></i>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Pendakian Gunung</h3>
+                            <h3 class="text-xl text-slate-500 font-bold mb-2">Pendakian Gunung</h3>
                             <p class="text-gray-600 mb-4">Taklukkan puncak Gunung Kerinci dengan rute aman dan
                                 pemandangan spektakuler</p>
                             <ul class="text-sm text-gray-500 space-y-1">
                                 <li><i class="fas fa-check text-green-500 mr-2"></i>3 Hari 2 Malam</li>
-                                <li><i class="fas fa-check text-green-500 mr-2"></i>Pemandu Profesional</li>
-                                <li><i class="fas fa-check text-green-500 mr-2"></i>Perlengkapan Lengkap</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Bersama Tim dan Pemandu</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Perlengkapan Disediakan (Tenda, Matras, Cooking Set)</li>
                             </ul>
                             <div class="mt-4">
                                 <span class="text-2xl font-bold text-green-600">Rp 1.5jt</span>
                                 <span class="text-gray-500">/orang</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Rafting -->
-                    <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
-                        <div class="h-48 bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center">
-                            <i class="fas fa-water text-white text-6xl"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Arung Jeram</h3>
-                            <p class="text-gray-600 mb-4">Rasakan sensasi adrenalin di jeram Sungai Kerinci yang
-                                menantang</p>
-                            <ul class="text-sm text-gray-500 space-y-1">
-                                <li><i class="fas fa-check text-green-500 mr-2"></i>Grade III-IV</li>
-                                <li><i class="fas fa-check text-green-500 mr-2"></i>Safety Equipment</li>
-                                <li><i class="fas fa-check text-green-500 mr-2"></i>Instruktur Berpengalaman</li>
+                            <ul class="text-sm text-gray-500 space-y-1 mt-3">
+                                <li><i class="fas fa-close text-red-500 mr-2"></i>Belum Termasuk Tiket Transport dan Makan</li>                                
                             </ul>
-                            <div class="mt-4">
-                                <span class="text-2xl font-bold text-green-600">Rp 750k</span>
-                                <span class="text-gray-500">/orang</span>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Rock Climbing -->
-                    <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
-                        <div
-                            class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-                            <i class="fas fa-grip-vertical text-white text-6xl"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Panjat Tebing</h3>
-                            <p class="text-gray-600 mb-4">Uji keberanianmu di tebing batu dengan tingkat kesulitan
-                                bervariasi</p>
-                            <ul class="text-sm text-gray-500 space-y-1">
-                                <li><i class="fas fa-check text-green-500 mr-2"></i>5 Route Level</li>
-                                <li><i class="fas fa-check text-green-500 mr-2"></i>Full Gear</li>
-                                <li><i class="fas fa-check text-green-500 mr-2"></i>Coach Certified</li>
-                            </ul>
-                            <div class="mt-4">
-                                <span class="text-2xl font-bold text-green-600">Rp 500k</span>
-                                <span class="text-gray-500">/orang</span>
-                            </div>
-                        </div>
-                    </div>
-
+                                    
                     <!-- Conservation -->
                     <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
                         <div
@@ -215,7 +175,7 @@
                             <i class="fas fa-tree text-white text-6xl"></i>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Konservasi Alam</h3>
+                            <h3 class="text-xl text-slate-500 font-bold mb-2">Konservasi Alam</h3>
                             <p class="text-gray-600 mb-4">Ikut serta dalam pelestarian hutan dan penanaman pohon bersama
                                 kami</p>
                             <ul class="text-sm text-gray-500 space-y-1">
@@ -227,6 +187,9 @@
                                 <span class="text-2xl font-bold text-green-600">Rp 300k</span>
                                 <span class="text-gray-500">/orang</span>
                             </div>
+                            <ul class="text-sm text-gray-500 space-y-1 mt-3">
+                                <li><i class="fas fa-close text-red-500 mr-2"></i>Belum Termasuk Tiket Transport dan Makan</li>                                
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -524,12 +487,12 @@
                         <div class="text-center">
                             <i class="fas fa-phone text-3xl text-green-500 mb-4"></i>
                             <p class="font-semibold">Telepon</p>
-                            <p class="text-gray-400">+62 812-3456-7890</p>
+                            <p class="text-gray-400">+XX XXX-XXXX-XXXX</p>
                         </div>
                         <div class="text-center">
                             <i class="fas fa-envelope text-3xl text-green-500 mb-4"></i>
                             <p class="font-semibold">Email</p>
-                            <p class="text-gray-400">info@forestadvent.id</p>
+                            <p class="text-gray-400">example@example.com</p>
                         </div>
                         <div class="text-center">
                             <i class="fas fa-map-marker-alt text-3xl text-green-500 mb-4"></i>
